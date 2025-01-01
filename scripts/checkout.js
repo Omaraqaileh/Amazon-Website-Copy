@@ -7,9 +7,8 @@ let cartSummaryHTML = '';
 
 
 const today = dayjs();
-const deliveryDate = today.add(7, 'days');
-console.log(deliveryDate);
-console.log(deliveryDate.format('dddd, MMMM D'));
+console.log(today);
+console.log(today.format('dddd, MMMM D'));
 
 cart.forEach((cartItem) => {
     const productId = cartItem.productId;
@@ -24,7 +23,7 @@ cart.forEach((cartItem) => {
 
     })
 
-    console.log(matchingProduct);
+
     
 
     cartSummaryHTML += `<div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
@@ -104,7 +103,6 @@ cart.forEach((cartItem) => {
           </div>`
 })
 
-console.log(cartSummaryHTML);
 
 document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
 
@@ -121,6 +119,9 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {link.addEventLis
 let quantity = 0;
 
 document.querySelector(`.js-return`).innerHTML = updateCartQuantity(quantity);
+
+dayjs();
+
 
 
 
